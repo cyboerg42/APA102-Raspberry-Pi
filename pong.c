@@ -3,9 +3,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
-#include <time.h>
-#include <math.h>
-// 62.2 FPS bei 4 MHZ! NOTIZ!
+
+
 int main(){
 	
 	wiringPiSetup();
