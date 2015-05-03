@@ -1,0 +1,18 @@
+## Code by Peter R. Kowalsky aka Cyborg00222 aka Acheloos
+## Thanks to Jakob Riepler aka XDjackieXD for the code base!
+## - Current Version 0.01.2015.05.03
+
+How to build frames :
+
+It's simple.
+
+Each LED got a RED, BLUE and GREEN Value. Right? Right.
+
+
+RED GREEN BLUE RED GREEN BLUE ..... RED GREEN BLUE
+FF 00 00 FF 00 00 FF 00 00 ..... FF 00 00
+
+But every frame must have 300 of those (FF 00 00) Blocks. More will be ignored. Less will eventually crash. 
+Beside you don't change the code.
+
+That's all. Simple and tidy. :)
