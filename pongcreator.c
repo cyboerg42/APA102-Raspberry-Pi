@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
 	fwrite(&leds, 4, 1, fp);
 
 	for(count = 0; count < frames; count++){
-		if(count == leds-1)
+		if(pong == leds-1)
 			if(direction == 0)
 				direction = 1;
 			else
