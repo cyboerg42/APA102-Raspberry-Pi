@@ -16,17 +16,17 @@ int main(int argc, char *argv[]){
 	}
 
 	int a, frames, delay, leds, count;
-	uint8_t frame[900], buffer[4];
+	uint8_t frame[30000], buffer[4];
 	
 	FILE * fp;
 	fp = fopen (argv[1], "r");
 
-	fread(&frames, 4, 1, file);
-	fread(&del, 4, 1, file);
-	fread(&leds, 4, 1, file);
+	fread(&frames, 4, 1, fp);
+	fread(&del, 4, 1, fp);
+	fread(&leds, 4, 1, fp);
 
 	for(count = 0; count < frames, count++){
-		fread(frame, 1, 900, fp);
+		fread(frame, 1, 3*leds, fp);
 
 		wiringPiSPIDataRW(0, (unsigned char*)0b11111111, 1);
 		wiringPiSPIDataRW(0, (unsigned char*)0b11111111, 1);
