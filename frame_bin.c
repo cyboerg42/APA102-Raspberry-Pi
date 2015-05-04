@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
 		return -1;
 	}
 
-	int a, frames, delay, leds, count;
+	int a, frames, del, leds, count;
 	uint8_t frame[30000], buffer[4];
 	
 	FILE * fp;
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
 	fread(&del, 4, 1, fp);
 	fread(&leds, 4, 1, fp);
 
-	for(count = 0; count < frames, count++){
+	for(count = 0; count < frames; count++){
 		fread(frame, 1, 3*leds, fp);
 
 		wiringPiSPIDataRW(0, (unsigned char*)0b11111111, 1);
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]){
 		wiringPiSPIDataRW(0, (unsigned char*)0b11111111, 1);
 		wiringPiSPIDataRW(0, (unsigned char*)0b11111111, 1);
 		wiringPiSPIDataRW(0, (unsigned char*)0b11111111, 1);
-		delay(delay);
+		delay(del);
 	}
 
 	fclose(fp);
