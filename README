@@ -1,7 +1,3 @@
-## Code by Peter R. Kowalsky aka Cyborg00222 aka Acheloos
-## Thanks to Jakob Riepler aka XDjackieXD for the code base!
-## - Current Version 0.01.2015.05.03
-## - Coded on Windows, build for Raspberry Pi2 (armv7)
 ## - This code require the wiringPi Library to build and run!
 
 "frame.c" :
