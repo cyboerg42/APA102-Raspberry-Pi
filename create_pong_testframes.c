@@ -4,8 +4,8 @@
 #include <stdint.h>
 
 
-int main(int argc, char *argv[]){
-
+int main(int argc, char *argv[])
+{
 	if(argc < 2 || argc > 2){
 		printf("usage: %s file\n", argv[0]);
 		return -1;
@@ -19,7 +19,7 @@ int main(int argc, char *argv[]){
 	}
 
 	int delay=200, frames=600, leds=300, count, direction, tmp, pong = 0;
-	char r = 255, g = 255, b = 255; 
+	char r = 255, g = 255, b = 255;
 
 	fwrite(&frames, 4, 1, fp);
 	fwrite(&delay, 4, 1, fp);
@@ -42,7 +42,6 @@ int main(int argc, char *argv[]){
 				fputc(0, fp);
 				fputc(0, fp);
 			}
-		
 		if(direction == 1)
 			pong++;
 		else
@@ -50,7 +49,5 @@ int main(int argc, char *argv[]){
 	}
 
 	fclose(fp);
-
 	return 0;
-
 }

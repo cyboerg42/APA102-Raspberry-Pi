@@ -1,11 +1,9 @@
-//Program to create a simple pong file with the new file format
-
 #include <stdio.h>
 #include <stdint.h>
 
 
-int main(int argc, char *argv[]){
-
+int main(int argc, char *argv[])
+{
 	if(argc < 2 || argc > 2){
 		printf("usage: %s file\n", argv[0]);
 		return -1;
@@ -31,7 +29,5 @@ int main(int argc, char *argv[]){
 	}
 
 	fclose(fp);
-
 	return 0;
-
 }

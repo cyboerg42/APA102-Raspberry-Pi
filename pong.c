@@ -4,26 +4,27 @@
 #include <stdint.h>
 #include <string.h>
 
+#define LED_COUNT 300
 
-int main(){
-	
+int main()
+{
 	wiringPiSetup();
 	if(wiringPiSPISetup(0,6000000)<0){
 		printf("Failed to setup SPI!\n");
 		return -1;
 	}
-	
+
 	int a;
 	int b;
 	int c;
 	int d;
 	uint8_t buffer0[1], buffer1[4];
-	
+
 	d = 0;
-	c = 280;
-	
-	while((1 != 2)){	
-		if(d==0){	
+	c = LED_COUNT - 20;
+
+	while((1 != 2)){
+		if(d==0){
 			for(a=0; a<4; a++){
 				buffer0[0]=0b00000000;
 				wiringPiSPIDataRW(0, (unsigned char*)buffer0, 1);
@@ -72,7 +73,7 @@ int main(){
 					c = 280;
 					d = 1;
 			}
-		}	
+		}
 		if(d!=0){
 			for(a=0; a<4; a++){
 				buffer0[0]=0b00000000;
@@ -84,7 +85,7 @@ int main(){
 				buffer1[2]=0;
 				buffer1[3]=255;
 				wiringPiSPIDataRW(0, (unsigned char*)buffer1, 4);
-			}	
+			}
 			for(a=0; a<c; a++){
 				buffer1[0]=0b11111111;
 				buffer1[1]=0;
@@ -99,14 +100,14 @@ int main(){
 					buffer1[3]=0;
 					wiringPiSPIDataRW(0, (unsigned char*)buffer1, 4);
 					c = c - 1;
-			}		
+			}
 			for(a=0; a<(278-c); a++){
 				buffer1[0]=0b11111111;
 				buffer1[1]=0;
 				buffer1[2]=0;
 				buffer1[3]=0;
 				wiringPiSPIDataRW(0, (unsigned char*)buffer1, 4);
-			}		
+			}
 			for(a=0; a<10; a++){
 				buffer1[0]=0b11111111;
 				buffer1[1]=0;

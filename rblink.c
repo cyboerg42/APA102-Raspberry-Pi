@@ -6,8 +6,10 @@
 #include <time.h>
 #include <math.h>
 
-int main(){
-	
+#define LED_COUNT 300
+
+int main()
+{
 	wiringPiSetup();
 	if(wiringPiSPISetup(0,6000000)<0){
 		printf("Failed to setup SPI!\n");
@@ -23,7 +25,7 @@ int main(){
 			buffer0[0]=0b00000000;
 			wiringPiSPIDataRW(0, (unsigned char*)buffer0, 1);
 		}
-		for(a=0; a<304; a++){
+		for(a=0; a<LED_COUNT+4; a++){
 			buffer1[0]=0b11111111;
 			buffer1[1]=(uint8_t)(rand() % 256);
 			buffer1[2]=(uint8_t)(rand() % 256);
@@ -35,5 +37,6 @@ int main(){
 			wiringPiSPIDataRW(0, (unsigned char*)buffer0, 1);
 		}
 	}
+
 	return 0;
 }

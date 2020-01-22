@@ -1,9 +1,4 @@
-## - This code require the wiringPi Library to build and run!
-
-"frame.c" :
-(Loads an frame from a file and display it on your strip)
-Build : gcc -Wall -o frame frame.c -lwiringPi
-Usage : ./frame file (./frame frame1)
+This code require the wiringPi Library to build and run!
 
 "hex.c" :
 (Display any 6 digit HTML Color Code)
@@ -14,11 +9,6 @@ Usage : ./hex HTML_COLOR_CODE (./hex FFFFFF)
 (300x1 Pong - When you run it, you will see it)
 Build : gcc -Wall -o pong pong.c -lwiringPi
 Usage : ./pong
-
-"pong_frames.zip" :
-(PONG FRAMES!!!111eleven)
-Pre-compiled version of frame.c with 561 Frames. And yeah, its Pong. Just not hard coded.
-Usage : unzip pong_frames.zip; chmod +x frames; chmod +x pongbash.sh; ./pongbash
 
 "rblink.c" :
 (Just random "shit" to test your strip)
